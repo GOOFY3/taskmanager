@@ -29,6 +29,37 @@ app.get('/', (req, res) => {
   });
 })
 
+app.post('/task/add', (req, res) => {
+  var task = req.body.task;
+  client.rpush('tasks', task, (err, reply) => {
+    if(err){
+      console.log(err);
+    }
+    else{
+      console.log("Task Added!");
+      res.redirect('/');
+    }
+  });
+})
+
+
+app.post('/task/delete', (req, res) => {
+    var tasksToDel = req.body.tasks;
+    client.lrange('tasks', 0, -1, (err, tasks) => {
+      for(var i =0; i < tasks.length; i++){
+        if(tasksToDel.indexOf(tasks[i]) > -1){
+          client.lrem('tasks', 0, tasks[i], () => {
+            if (err){
+              console.log(err);
+            }
+          });
+        }
+      }
+      res.redirect('/');
+    });
+});
+
+
 app.listen(3000);
 console.log('Server started on 3000');
 
