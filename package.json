@@ -1,0 +1,26 @@
+{
+  "name": "taskmanager",
+  "version": "1.0.0",
+  "description": "Simple task manager",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GOOFY3/taskmanager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "ejs": "*",
+    "morgan": "*",
+    "redis": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/GOOFY3/taskmanager/issues"
+  },
+  "homepage": "https://github.com/GOOFY3/taskmanager#readme"
+}
