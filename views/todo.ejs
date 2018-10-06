@@ -1,3 +1,9 @@
+<html>
+<head>
+  <title>
+    Taskmanager using Redis
+  </title>
+  <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
 <style>
   .del:checked + span{
     color: red;
@@ -6,7 +12,8 @@
     list-style: none;
   }
 </style>
-
+</head>
+<body>
 <form method="post" action="/task/add">
   <label>Add Task</label>
   <input type="text" name="task" placeholder="Add Text">
@@ -24,3 +31,29 @@
 </ul>
 <input type="submit" value="Delete a task">
 </form>
+
+<h2>Next Business Call</h2>
+Name: <%= call.name %><br>
+Company: <%= call.company %><br>
+Phone: <%= call.phone %><br>
+Time: <%= call.time %><br>
+
+
+<h3>Edit Next Call</h1>
+<form method = "post" action="/call/add">
+  <label>Contact name</label><br>
+  <input type="text" name="name" placeholder="Task Name">
+  <br><br>
+  <label>Company</label><br>
+  <input type="text" name="company" placeholder="Company">
+  <br><br>
+  <label>Phone</label><br>
+  <input type="text" name="phone" placeholder="Phone">
+  <br><br>
+  <label>Time</label><br>
+  <input type="text" name="time" placeholder="Time">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
